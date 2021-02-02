@@ -9,6 +9,27 @@
 */ 
 
 //1.
+var numeros = [];
+for (var i = 0; i<6; i++){
+    numeros.push(parseInt(prompt("Ingresa el numero")));
+}
+console.log(numeros);
+mostrarArray(numeros);
+//Ordenar arreglo y mostrarlo
+console.log(numeros.sort((a,b)=> a-b));
+//Invertir su orden y mostrarlo
+console.log(numeros.reverse());
+//Mostrar cuantos elementos tiene el array
+console.log(numeros.length);
+
+//6. Busqueda de una valor 
+var valor = parseInt(prompt("Ingresa un valor: "));
+//Mostramos si lo encuentra o no
+busqueda(numeros.includes(valor),valor,numeros);
+
+
+
+
 function mostrarArray(elemento){
     document.write("<h1> Impresion de los numeros </h1>");
     elemento.forEach(element => {
@@ -16,9 +37,12 @@ function mostrarArray(elemento){
     });
 }
 
-var numeros = [];
-for (var i = 0; i<6; i++){
-    numeros.push(parseInt(prompt("Ingresa el numero")));
+function busqueda(valor,elemento,arr){
+    if(valor == true){
+        console.log("Valor encontrado");
+        console.log(arr.indexOf(elemento));
+    }
+    else{
+        console.log("Valor no encontrado")
+    }
 }
-console.log(numeros);
-mostrarArray(numeros);
